@@ -7,7 +7,7 @@ const About: FC = (props: any) => {
   
 const {
   data: { 
-    strapiAbout: {title, image, info, stack}
+    contentfulAbout: {title, image, info, tags}
   }
 } = props;
 
@@ -20,9 +20,9 @@ const {
             <Title title={title}/>
             <p>{info}</p>
             <div className="about-stack">
-              {stack.map((item: any) => {
+              {tags.map((item: any) => {
                 return (
-                  <span key={item.id}>{item.title}</span>
+                  <span key={item}>{item}</span>
                 );
               })}
             </div>
@@ -34,21 +34,19 @@ const {
 }
 
 export const query = graphql`
-  {
-    strapiAbout {
+query getAbout {
+  contentfulAbout(title: {eq: "About Me"}) {
+    title
+    info {
       info
-      title
-      stack {
-        id
-        title
-      }
-      image {
-        localFile {
-          publicURL
-        }
-      }
     }
+    image {
+      gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+    }
+    tags
   }
+}
+
 `;
 
 export default About;

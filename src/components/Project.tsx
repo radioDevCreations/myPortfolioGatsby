@@ -4,11 +4,13 @@ import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
 import { Link } from "gatsby"
 
 interface ProjectProps{
-  description: string;
+  description: {
+    description: string;
+  }
   title: string;
   slug: string;
   github: string;
-  stack: string[];
+  tags: string[];
   url: string;
   image: any;
   index: number;
@@ -20,13 +22,13 @@ const Project: FC<ProjectProps> = (props: ProjectProps) => {
     title,
     slug,
     github,
-    stack,
+    tags,
     url,
     image,
     index,
   } = props;
 
-  const imageData = image.localFile.childrenImageSharp[0].gatsbyImageData;
+  const imageData = image.gatsbyImageData;
 
   return (
   <article className="project">
@@ -43,12 +45,12 @@ const Project: FC<ProjectProps> = (props: ProjectProps) => {
         <h3>{title}</h3>
       </Link>
       <p className="project-desc">
-        {description}
+        {description.description}
       </p>
       <div className="project-stack">
-        {stack.map((item: any) => {
+        {tags.map((item: string) => {
           return (
-            <span key={item.id}>{item.title}</span>
+            <span key={item}>{item}</span>
           );
         })}
       </div>
@@ -56,7 +58,7 @@ const Project: FC<ProjectProps> = (props: ProjectProps) => {
         <a href={github}>
           <FaGithubSquare className="project-icon"></FaGithubSquare>
         </a>
-        <a href="project-icon">
+        <a href={url}>
           <FaShareSquare className="project-icon"></FaShareSquare>
         </a>
       </div>

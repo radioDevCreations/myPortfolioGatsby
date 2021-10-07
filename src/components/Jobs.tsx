@@ -10,7 +10,7 @@ const Jobs: FC = () => {
 
   const data = useStaticQuery(query);
   const {
-    allStrapiJob: {
+    allContentfulJob: {
       nodes: jobs
     }
   } = data;
@@ -38,10 +38,10 @@ const Jobs: FC = () => {
         <p className="job-date">
           {date}
         </p>
-        {description.map((item: any) => {
-          return <div key={item.id} className="job-desc">
+        {description.content.map((item: string, index: number) => {
+          return <div key={index} className="job-desc">
             <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
-            <p>{item.name}</p>
+            <p>{item}</p>
           </div>
         })}
       </article>

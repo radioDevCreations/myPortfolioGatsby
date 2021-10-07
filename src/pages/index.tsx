@@ -9,7 +9,7 @@ import Layout from "../components/Layout";
 
 const IndexPage: FC = (props: any) => {
   const {
-    allStrapiProject: {
+    allContentfulProject: {
     nodes: projects
   }
 } = props.data;
@@ -31,28 +31,22 @@ const IndexPage: FC = (props: any) => {
 
 export const query = graphql`
   {
-    allStrapiProject(filter: {featured: {eq: true}}) {
+    allContentfulProject(filter: {featured: {eq: true}}) {
       nodes {
         github
         featured
-        description
+        description {
+          description
+        }
         id
         url
         slug
         title
-        stack {
-          id
-          title
-        }
+        tags
         image {
-          localFile {
-            childrenImageSharp {
-              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
-            }
-          }
+          gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
         }
       }
-      totalCount
     }
   }
 `;

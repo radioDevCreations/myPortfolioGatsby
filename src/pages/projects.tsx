@@ -5,7 +5,7 @@ import SEO from "../components/SEO";
 const ProjectsPage: FC = (props: any) => {
   
   const {data: {
-    allStrapiProject: {
+    allContentfulProject: {
       nodes: projects
     } 
   }} = props;
@@ -23,28 +23,22 @@ const ProjectsPage: FC = (props: any) => {
 
 export const query = graphql`
   {
-    allStrapiProject {
+    allContentfulProject {
       nodes {
         github
         featured
-        description
+        description {
+          description
+        }
         id
         url
         slug
         title
-        stack {
-          id
-          title
-        }
+        tags
         image {
-          localFile {
-            childrenImageSharp {
-              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
-            }
-          }
+          gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
         }
       }
-      totalCount
     }
   }
 `;

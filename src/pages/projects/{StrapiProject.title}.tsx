@@ -9,20 +9,20 @@ const ProjectTemplate: FC = (props: any) => {
     return (
         <main className="project-template-page">
             <h2>{title}</h2>
-            <p>{data.strapiProject.description}</p>
+            <p>{data.contentfulProject.description.description}</p>
         </main>
     );
 }
 
 export const query = graphql`
-query getSingleProject($title: String) {
-    strapiProject(title: {eq: $title}) {
-      description
+  query getSingleProject($title: String) {
+    contentfulProject(title: {eq: $title}) {
+      description {
+        description
+      }
       title
       image {
-        localFile {
-          publicURL
-        }
+        gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
       }
     }
   }

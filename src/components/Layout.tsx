@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import "normalize.css";
 import { Reset } from "styled-reset";
+import "../assets/css/main.css";
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -21,7 +22,7 @@ const Layout: FC<LayoutProps> = (props: LayoutProps) => {
 
   return (
     <>
-      <Reset/>
+      {/* <Reset/> */}
       <Navbar toggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       {children}
