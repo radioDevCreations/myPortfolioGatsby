@@ -1,7 +1,7 @@
-import React, { FC } from "react"
-import { GatsbyImage, IGatsbyImageData, getImage} from "gatsby-plugin-image"
-import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
-import { Link } from "gatsby"
+import React, { FC } from "react";
+import { GatsbyImage, IGatsbyImageData, getImage} from "gatsby-plugin-image";
+import { FaGithubSquare, FaShareSquare } from "react-icons/fa";
+import { Link } from "gatsby";
 
 interface ProjectProps{
   description: {
