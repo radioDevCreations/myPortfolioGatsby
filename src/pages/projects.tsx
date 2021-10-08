@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { graphql } from "gatsby";
 import Projects from "../components/Projects";
 import SEO from "../components/SEO";
+
 const ProjectsPage: FC = (props: any) => {
   
   const {data: {

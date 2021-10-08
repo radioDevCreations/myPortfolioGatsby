@@ -1,5 +1,6 @@
-import React, { FC } from "react"
-import SEO from "../components/SEO"
+import React, { FC } from "react";
+import SEO from "../components/SEO";
+
 const Contact: FC = () => {
   return (
     <>
