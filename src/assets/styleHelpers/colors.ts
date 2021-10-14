@@ -13,5 +13,6 @@ const COLORS = {
     orangeYellowCrayola: "e9c46a",
     sandyBrown: "f4a261",
     burntSienna: "e76f51",
+    darkJungleGreen: "#072420",
     
 }
