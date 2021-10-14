@@ -207,6 +207,7 @@ Navbar
 ===============
 */
 
+/* used 1 */
 .navbar {
   position: absolute;
   top: 0;
@@ -218,19 +219,27 @@ Navbar
   z-index: 200;
   background: var(--clr-white);
 }
+
+/* used 1 */
 .nav-center {
   width: 90vw;
   max-width: 1170px;
   margin: 0 auto;
 }
+
+/* used 1 */
 .nav-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+/* used 1 */
 .nav-header img {
   margin-bottom: 0.375rem;
 }
+
+/* used 1 */
 .toggle-btn {
   font-size: 2rem;
   background: transparent;
@@ -239,9 +248,11 @@ Navbar
   cursor: pointer;
   transition: var(--transition);
 }
+/* used 1 */
 .toggle-btn:hover {
   color: var(--clr-primary-2);
 }
+/* used 1 */
 .nav-links {
   display: none;
 }
@@ -273,8 +284,9 @@ Navbar
     align-items: center;
   }
 }
-
+/* covered */
 @media screen and (min-width: 992px) {
+  /* used 1 */
   .navbar {
     background: transparent;
   }
