@@ -256,15 +256,20 @@ Navbar
 .nav-links {
   display: none;
 }
+/* covered */
 @media screen and (min-width: 768px) {
+  /* used 1 */
   .toggle-btn {
     display: none;
   }
+
+  /* used 1 */
   .nav-links {
     display: flex;
     justify-content: flex-end;
   }
 
+  /* used 1 */
   .nav-links a {
     margin-right: 2rem;
     text-transform: capitalize;
@@ -274,10 +279,14 @@ Navbar
     transition: var(--transition);
     padding: 0.5rem 0;
   }
+
+  /* used 1 */
   .nav-links a:hover {
     color: var(--clr-primary-5);
     box-shadow: 0px 2px var(--clr-primary-5);
   }
+
+  /* used 1 */
   .nav-center {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -296,6 +305,7 @@ Navbar
 Sidebar
 ===============
 */
+/* used 1 */
 .sidebar {
   background: var(--clr-grey-10);
   position: fixed;
