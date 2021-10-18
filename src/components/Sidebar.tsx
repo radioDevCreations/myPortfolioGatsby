@@ -4,6 +4,9 @@ import { SocialLink, socialLinks } from "../constants/social_links";
 import { Link } from "gatsby";
 import { FaTimes } from "react-icons/fa";
 import styled from "styled-components";
+import COLORS from "../assets/styleHelpers/colors";
+import _VAR from "../assets/styleHelpers/styleVariables";
+import { slideRight } from "../assets/styleHelpers/animations";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -11,7 +14,7 @@ interface SidebarProps {
 }
 
 const SidebarWrapper = styled.aside<{ active: boolean }>`
-  background: var(--clr-grey-10);
+  background: ${COLORS.grey10};
   position: fixed;
   top: 0;
   left: 0;
@@ -21,7 +24,7 @@ const SidebarWrapper = styled.aside<{ active: boolean }>`
   display: grid;
   place-items: center;
   opacity: 0;
-  transition: var(--transition);
+  transition: ${_VAR.transition};
   transform: translateX(-100%);
   ${({ active }) =>
     active &&
@@ -31,16 +34,87 @@ const SidebarWrapper = styled.aside<{ active: boolean }>`
     `}
 `;
 
+const CloseButton = styled.button`
+  position: absolute;
+  right: 4.75%;
+  top: 2.75%;
+  font-size: 2.5rem;
+  background: transparent;
+  border-color: transparent;
+  color: ${COLORS.redDark};
+  cursor: pointer;
+`;
+
+const SidebarLinks = styled.ul<{ active: boolean }>`
+  li {
+    ${({ active }) =>
+    active &&
+    `
+    opacity: 0;
+    `}
+  }
+  li a {
+    ${({ active }) =>
+    active &&
+    `
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+    color: ${COLORS.grey5};
+    letter-spacing: ${_VAR.spacing};
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    -webkit-transition: ${_VAR.transition};
+    -o-transition: ${_VAR.transition};
+    transition: ${_VAR.transition};
+    border-radius: ${_VAR.radius};
+    `}
+    
+  }
+  li a:hover {
+    ${({ active }) =>
+    active &&
+    `
+    background: ${COLORS.primary9};
+    color: ${COLORS.primary5};
+    `}
+  }
+  li {
+  -webkit-animation: ${slideRight} 0.5s ease-in-out 0.3s forwards;
+  animation: ${slideRight} 0.5s ease-in-out 0.3s forwards;
+  }
+  li:nth-of-type(1) {
+  -webkit-animation-delay: 0.25s;
+  animation-delay: 0.25s;
+  }
+  li:nth-of-type(2) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  }
+  li:nth-of-type(3) {
+  -webkit-animation-delay: 0.75s;
+  animation-delay: 0.75s;
+  }
+  li:nth-of-type(4) {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  }
+  li:nth-of-type(5) {
+  -webkit-animation-delay: 1.25s;
+  animation-delay: 1.25s;
+  }
+`;
+
 const Sidebar: FC<SidebarProps> = (props: SidebarProps) => {
   const { isOpen, toggleSidebar } = props;
 
   return (
     <SidebarWrapper active={isOpen}>
-      <button className="close-btn" type="button" onClick={toggleSidebar}>
+      <CloseButton type="button" onClick={toggleSidebar}>
         <FaTimes />
-      </button>
-      <div className="side-container">
-        <ul className={isOpen ? "sidebar-links" : undefined}>
+      </CloseButton>
+      <div>
+        <SidebarLinks active={isOpen}>
           {links.map((link: any) => {
             return (
               <li key={link.id}>
@@ -50,7 +124,7 @@ const Sidebar: FC<SidebarProps> = (props: SidebarProps) => {
               </li>
             );
           })}
-        </ul>
+        </SidebarLinks>
         <ul className={isOpen ? "social-links sidebar-icons" : undefined}>
           {socialLinks.map((link: SocialLink) => {
             return (
