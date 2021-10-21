@@ -45,18 +45,11 @@ const CloseButton = styled.button`
   cursor: pointer;
 `;
 
-const SidebarLinks = styled.ul<{ active: boolean }>`
+const SidebarLinks = styled.ul`
   li {
-    ${({ active }) =>
-    active &&
-    `
     opacity: 0;
-    `}
   }
   li a {
-    ${({ active }) =>
-    active &&
-    `
     display: block;
     text-align: center;
     text-transform: capitalize;
@@ -68,40 +61,34 @@ const SidebarLinks = styled.ul<{ active: boolean }>`
     -o-transition: ${_VAR.transition};
     transition: ${_VAR.transition};
     border-radius: ${_VAR.radius};
-    `}
-    
   }
   li a:hover {
-    ${({ active }) =>
-    active &&
-    `
     background: ${COLORS.primary9};
     color: ${COLORS.primary5};
-    `}
   }
   li {
-  -webkit-animation: ${slideRight} 0.5s ease-in-out 0.3s forwards;
-  animation: ${slideRight} 0.5s ease-in-out 0.3s forwards;
+    -webkit-animation: ${slideRight} 0.5s ease-in-out 1s forwards;
+    animation: ${slideRight} 0.5s ease-in-out 1s forwards;
   }
   li:nth-of-type(1) {
-  -webkit-animation-delay: 0.25s;
-  animation-delay: 0.25s;
+    -webkit-animation-delay: 0.25s;
+    animation-delay: 0.25s;
   }
   li:nth-of-type(2) {
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
   }
   li:nth-of-type(3) {
-  -webkit-animation-delay: 0.75s;
-  animation-delay: 0.75s;
+    -webkit-animation-delay: 0.75s;
+    animation-delay: 0.75s;
   }
   li:nth-of-type(4) {
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
   }
   li:nth-of-type(5) {
-  -webkit-animation-delay: 1.25s;
-  animation-delay: 1.25s;
+    -webkit-animation-delay: 1.25s;
+    animation-delay: 1.25s;
   }
 `;
 
@@ -114,17 +101,19 @@ const Sidebar: FC<SidebarProps> = (props: SidebarProps) => {
         <FaTimes />
       </CloseButton>
       <div>
-        <SidebarLinks active={isOpen}>
-          {links.map((link: any) => {
-            return (
-              <li key={link.id}>
-                <Link to={link.url} onClick={toggleSidebar}>
-                  {link.text}
-                </Link>
-              </li>
-            );
-          })}
-        </SidebarLinks>
+        {isOpen && (
+          <SidebarLinks>
+            {links.map((link: any) => {
+              return (
+                <li key={link.id}>
+                  <Link to={link.url} onClick={toggleSidebar}>
+                    {link.text}
+                  </Link>
+                </li>
+              );
+            })}
+          </SidebarLinks>
+        )}
         <ul className={isOpen ? "social-links sidebar-icons" : undefined}>
           {socialLinks.map((link: SocialLink) => {
             return (
