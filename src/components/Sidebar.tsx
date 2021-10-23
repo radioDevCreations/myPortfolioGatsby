@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import links from "../constants/links";
 import { SocialLink, socialLinks } from "../constants/social_links";
 import { Link } from "gatsby";
@@ -7,6 +7,7 @@ import styled from "styled-components";
 import COLORS from "../assets/styleHelpers/colors";
 import _VAR from "../assets/styleHelpers/styleVariables";
 import { slideRight } from "../assets/styleHelpers/animations";
+import { sizes } from "../assets/styleHelpers/breakpoints";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -23,8 +24,8 @@ const SidebarWrapper = styled.aside<{ active: boolean }>`
   z-index: 999;
   display: grid;
   place-items: center;
-  opacity: 0;
   transition: ${_VAR.transition};
+  opacity: 0;
   transform: translateX(-100%);
   ${({ active }) =>
     active &&

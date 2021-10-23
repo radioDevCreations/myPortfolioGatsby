@@ -21,6 +21,7 @@ const COLORS = {
 
   //   4th theme
   grey1: "hsl(209, 61%, 16%)",
+  grey3: "hsl(209, 35%, 30%)",
   grey5: "hsl(210, 22%, 49%)",
   grey10: "hsl(210, 36%, 96%)",
 

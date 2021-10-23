@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-  siteMetadata:{
+  siteMetadata: {
     title: `Radek Rozmus`,
     description: `This is my portfolio using Gatsby.`,
     titleTemplate: `%s | WebDev Portfolio`,
@@ -16,6 +16,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -37,8 +38,8 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `hh84bobed492`,
-        accessToken: '7fEW47djs2c3cY66vzxfxZIjygrc_KgePWJZ-rXQ_Zk',
+        accessToken: "7fEW47djs2c3cY66vzxfxZIjygrc_KgePWJZ-rXQ_Zk",
       },
     },
   ],
-}
+};

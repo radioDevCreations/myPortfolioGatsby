@@ -19,6 +19,7 @@
     "gatsby": "^3.2.1",
     "gatsby-plugin-image": "^1.2.1",
     "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-plugin-sass": "^5.0.0",
     "gatsby-plugin-sharp": "^3.2.1",
     "gatsby-plugin-styled-components": "^4.14.0",
     "gatsby-source-contentful": "^5.14.0",
@@ -29,6 +30,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
+    "sass": "^1.43.3",
     "styled-components": "^5.3.1",
     "styled-reset": "^4.3.4"
   },
