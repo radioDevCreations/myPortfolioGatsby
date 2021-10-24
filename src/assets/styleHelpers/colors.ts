@@ -18,6 +18,7 @@ const COLORS = {
   primary2: "hsl(185, 84%, 25%)",
   primary5: "hsl(185, 62%, 45%)",
   primary9: "hsl(185, 94%, 87%)",
+  primary10: "hsl(186, 100%, 94%)",
 
   //   4th theme
   grey1: "hsl(209, 61%, 16%)",

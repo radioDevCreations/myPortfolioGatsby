@@ -4,7 +4,8 @@ export const sizes = {
   giant2: 1440,
   giant1: 1366,
 
-  desktop2: 1240,
+  desktop3: 1240,
+  desktop2: 1170,
   desktop1: 1024,
 
   tablet4: 992,

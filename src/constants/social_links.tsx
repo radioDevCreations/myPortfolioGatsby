@@ -35,7 +35,7 @@ export const socialLinks = [
   },
 ];
 
-export interface SocialLink {
+export interface ISocialLink {
   id: number;
   icon: React.ReactNode;
   url: string;
