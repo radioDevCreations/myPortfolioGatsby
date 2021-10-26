@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from "react";
 import links from "../constants/links";
-import { SocialLink, socialLinks } from "../constants/social_links";
+import { ISocialLink, socialLinks } from "../constants/social_links";
 import { Link } from "gatsby";
 import { FaTimes } from "react-icons/fa";
 import styled from "styled-components";
@@ -116,7 +116,7 @@ const Sidebar: FC<SidebarProps> = (props: SidebarProps) => {
           </SidebarLinks>
         )}
         <ul className={isOpen ? "social-links sidebar-icons" : undefined}>
-          {socialLinks.map((link: SocialLink) => {
+          {socialLinks.map((link: ISocialLink) => {
             return (
               <li key={link.id}>
                 <a href={link.url} className="social-link">
