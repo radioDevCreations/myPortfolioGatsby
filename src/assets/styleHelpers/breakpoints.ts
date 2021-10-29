@@ -1,6 +1,7 @@
 import { css } from "styled-components";
 
 export const sizes = {
+  giant3: 1600,
   giant2: 1440,
   giant1: 1366,
 
